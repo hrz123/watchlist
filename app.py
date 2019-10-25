@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 app = Flask(__name__)
 
-name = 'Grey Li'
+name = 'Raz Hou'
 
 movies = [
     {'title': 'My Neighbor Totoro', 'year': '1988'},
