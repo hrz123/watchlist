@@ -188,7 +188,7 @@ def index():
         movie = Movie(title=title, year=year)  # 创建记录
         db.session.add(movie)  # 添加到数据库会话
         db.session.commit()  # 提交数据库会话
-        flash('Item create.')
+        flash('Item created.')
         return redirect(url_for('index'))
 
     movies = Movie.query.all()
@@ -220,7 +220,7 @@ def edit(movie_id):
 @app.route('/movie/delete/<int:movie_id>', methods=['POST'])  # 限定只接受 POST 请求
 @login_required
 def delete(movie_id):
-    movie = Movie.quert.get_or_404(movie_id)
+    movie = Movie.query.get_or_404(movie_id)
     db.session.delete(movie)
     db.session.commit()
     flash('Item deleted.')
