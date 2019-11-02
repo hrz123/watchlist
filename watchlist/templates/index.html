@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-<p>{{ movies | length }} Titles</p>
+<p>{{ movies | length }} Title{{ movies | length | pluralize }}</p>
 {% if current_user.is_authenticated %}
 <!-- 创建新条目表单 -->
 <form method="post">

@@ -37,4 +37,11 @@ def inject_user():
     user = User.query.first()
     return dict(user=user)
 
+@app.template_filter('pluralize')
+def pluralize(number, singular = '', plural = 's'):
+    if number == 1:
+        return singular
+    else:
+        return plural
+
 from watchlist import views, errors, commands
